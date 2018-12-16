@@ -3,6 +3,10 @@
 var express = require("express");
 var app = express();
 
+//Tells Express to serve contents of public directory
+app.use(express.static("public"));
+app.set("view engine", "ejs");
+
 app.get("/", function(req, res){
     console.log("Someone made a request to root!");
     res.render("home.ejs");
